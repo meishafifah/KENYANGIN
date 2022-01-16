@@ -24,9 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $restaurants = Restaurant::all();
+        $restaurantsPopuler = Restaurant::where('category', 'populer')->get();
+        $restaurantsRekomendasi = Restaurant::where('category', 'rekomendasi')->get();
+        $restaurantsPromo = Restaurant::where('category', 'promo')->get();
         return view('index', [
-            'restaurants' => $restaurants
+            'restaurantsPopuler' => $restaurantsPopuler,
+            'restaurantsRekomendasi' => $restaurantsRekomendasi,
+            'restaurantsPromo' => $restaurantsPromo,
         ]);
     }
 }

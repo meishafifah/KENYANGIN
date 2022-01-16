@@ -14,6 +14,38 @@
     border-radius: 30px;
 }
 
+.no-btn {
+    background: none;
+    border: none;
+}
+
+.kanan-web {
+    text-align: -webkit-right;
+}
+.btn-checkout {
+    background-color: #16243F;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    height: 45px;
+    width: 100%;
+    height: 100%;
+}
+.for-btn {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    text-align: right;
+    width: 330px;
+}
+.for-btn .row{
+    -bs-gutter-x: none!important;
+    height: 15vh;
+}
+.for-btn p{
+    margin-bottom: 0rem!important;
+}
+
 body {
     background-color: #B3CCC9;
     font-family: p400;
@@ -107,7 +139,6 @@ footer{
 
 .menu a{
     text-decoration: none!important;
-
 }
 
 .menu .card-title, .menu .card-text {
@@ -119,9 +150,16 @@ footer{
     border-radius: 30px;
 }
 
+/* .menu .card .ic-toko {
+    width: 100%;
+    max-height: 150px;
+    overflow: hidden;
+} */
+
 .toko .cover {
     width: 100%;
-    height: 330px;
+    max-height: 400px;
+    overflow: hidden;
 }
 
 .toko .kupon {
@@ -146,6 +184,8 @@ footer{
 .toko .block-menu .ic-menu {
     width: 100%;
     border-radius: 30px;
+    max-height: 150px;
+    overflow: hidden;
 }
 
 .toko .block-menu .btn {
@@ -181,6 +221,7 @@ footer{
 
 .kanan {
     text-align: right;
+    align-self: center;
 }
 
 .btn-kenyang {
@@ -189,5 +230,30 @@ footer{
     border-radius: 10px;
     padding: 10px;
     height: 45px;
+    border: 2px solid #16243F;
 }
 
+.btn-kenyang:hover {
+    color: #16243F;
+    background-color: white !important;
+    border: 2px solid #16243F;
+}
+.keranjang .btn-kenyang {
+    background-color: #16243F;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    height: 45px;
+    border: 2px solid #16243F;
+    width: 100%;
+    height: 100%;
+}
+.keranjang .btn-kenyang:hover {
+    color: white;
+    background-color: #16243F !important;
+    border: 2px solid #16243F;
+    -webkit-transform: scale(1.1); 
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}

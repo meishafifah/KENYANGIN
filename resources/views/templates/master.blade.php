@@ -15,7 +15,7 @@
     <section>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand text-white righteous" href="#">
+            <a class="navbar-brand text-white righteous" href=" {{route('index')}} ">
                 <img src="{{ asset('img/logo-nav.png') }}" alt="">
                 KENYANG.IN
             </a>
@@ -26,14 +26,36 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-white p400" aria-current="page" href="#">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Menu</a>
+                        <a class="nav-link active text-white p400" aria-current="page" href=" {{route('index')}} ">Beranda</a>
                     </li>
                     <li>
-                        <a href="#" class="btn btn-warning text-white">Daftar</a>
-                        <a href="#" class="btn btn-warning text-white">Masuk</a>
+                        {{-- guest = belum login --}}
+                        @guest
+                            @if (Route::has('login'))
+                                    <a class="btn btn-warning text-white" href="{{ route('login') }}">Masuk</a>
+                            @endif
+
+                            @if (Route::has('register'))
+                                    <a class="btn btn-warning text-white" href="{{ route('register') }}">Daftar</a>
+                            @endif
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ route('cart.index') }}">Cart</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Hai {{ Auth::user()->name }} 🌝</a>
+                            </li>
+
+                            <a class="btn btn-warning text-white" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                Keluar
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>    
+                        @endguest
                     </li>
                     </ul>
             </span>
